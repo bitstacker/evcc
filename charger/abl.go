@@ -100,10 +100,6 @@ func NewABLeMH(uri, device, comset string, baudrate int, slaveID uint8) (api.Cha
 		return nil, err
 	}
 
-	if !sponsor.IsAuthorized() {
-		return nil, api.ErrSponsorRequired
-	}
-
 	log := util.NewLogger("abl")
 	conn.Logger(log.TRACE)
 
